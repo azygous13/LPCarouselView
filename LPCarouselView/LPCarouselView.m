@@ -131,7 +131,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
     self.timer = nil;
 }
 
-- (void)nextpage
++ (void)nextpage
 {
     if (self.images.count > 0) {
         if (self.images.count == 1 && self.turnOffSingleImageLoop) {
@@ -148,6 +148,26 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
         }
         NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
         [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    }
+}
+
++ (void)previouspage
+{
+    if (self.images.count > 0) {
+        if (self.images.count == 1 && self.turnOffSingleImageLoop) {
+            return;
+        }
+        NSIndexPath *currentIndexPath      = [[self.collectionView indexPathsForVisibleItems] lastObject];
+        NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:kMaxSections/2];
+        [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        NSInteger previousItem    = currentIndexPathReset.item + 1;
+        NSInteger prevoiusSection = currentIndexPathReset.section;
+        if (previousItem <= 0) {
+            previousItem = 0;
+            previousSection--;
+        }
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:previousItem inSection:previousSection];
+        [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
     }
 }
 
@@ -197,7 +217,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
         cell.titleLabelTextColor       = self.titleLabelTextColor;
         cell.titleLabelTextFont        = self.titleLabelTextFont;
     }
-    
+
     return cell;
 }
 

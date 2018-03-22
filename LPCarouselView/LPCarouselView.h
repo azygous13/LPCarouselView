@@ -44,4 +44,6 @@ typedef NSArray *(^TitlesDataSourceBlock)();
                                images:(ImagesDataSourceBlock)images
                                titles:(TitlesDataSourceBlock)titles
                         selectedBlock:(DidSelectCarouselItemBlock)selectedBlock;
++ (void)nextpage
++ (void)previouspage
 @end
