@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.platform = :ios, '7.0'
   s.requires_arc = true
   s.source_files = 'LPCarouselView/*'
-  s.dependency 'SDWebImage', '~> 4’
+  s.dependency 'SDWebImage', '~> 4'
   s.frameworks = 'Foundation', 'UIKit'
 end
