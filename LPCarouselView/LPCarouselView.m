@@ -160,7 +160,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
         NSIndexPath *currentIndexPath      = [[self.collectionView indexPathsForVisibleItems] lastObject];
         NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:kMaxSections/2];
         [self.collectionView scrollToItemAtIndexPath:currentIndexPathReset atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-        NSInteger previousItem    = currentIndexPathReset.item + 1;
+        NSInteger previousItem    = currentIndexPathReset.item - 1;
         NSInteger previousSection = currentIndexPathReset.section;
         if (previousItem <= 0) {
             previousItem = 0;
