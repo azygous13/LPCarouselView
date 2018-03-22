@@ -163,7 +163,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
         NSInteger previousItem    = currentIndexPathReset.item - 1;
         NSInteger previousSection = currentIndexPathReset.section;
         if (previousItem <= 0) {
-            previousItem = 0;
+            previousItem = self.images.count - 1;
             previousSection--;
         }
         NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:previousItem inSection:previousSection];
