@@ -38,8 +38,6 @@ typedef NSArray *(^TitlesDataSourceBlock)();
 @property (nonatomic, strong) UIColor *pageControlNormalPageColor;
 @property (nonatomic, assign) BOOL turnOffInfiniteLoop;//default is NO
 @property (nonatomic, assign) BOOL turnOffSingleImageLoop;//default is NO
-@property (nonatomic, strong) NSArray *images;
-@property (nonatomic, weak) UICollectionView *collectionView;
 
 + (instancetype)carouselViewWithFrame:(CGRect)frame
                      placeholderImage:(UIImage *)placeholderImage
