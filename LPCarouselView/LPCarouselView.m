@@ -131,7 +131,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
     self.timer = nil;
 }
 
-+ (void)nextpage
+- (void)nextpage
 {
     if (self.images.count > 0) {
         if (self.images.count == 1 && self.turnOffSingleImageLoop) {
@@ -151,7 +151,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
     }
 }
 
-+ (void)previouspage
+- (void)previouspage
 {
     if (self.images.count > 0) {
         if (self.images.count == 1 && self.turnOffSingleImageLoop) {
