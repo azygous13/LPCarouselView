@@ -208,13 +208,15 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
             cell.imageView.contentMode     = self.carouselImageViewContentMode;
             cell.clipsToBounds             = YES;
 
-            if (cell.imageView.layer.sublayers == nil) {
-                CAGradientLayer *gradient = [CAGradientLayer layer];
-                gradient.frame = cell.bounds;
-                gradient.colors = @[(id)[UIColor clearColor].CGColor,
-                                        (id)[UIColor clearColor].CGColor,
-                                        (id)[UIColor grayColor].CGColor];
-                [cell.imageView.layer insertSublayer:gradient atIndex:0];
+            if (_turnOnBackdrop) {
+                if (cell.imageView.layer.sublayers == nil) {
+                    CAGradientLayer *gradient = [CAGradientLayer layer];
+                    gradient.frame = cell.bounds;
+                    gradient.colors = @[(id)[UIColor clearColor].CGColor,
+                                            (id)[UIColor clearColor].CGColor,
+                                            (id)[UIColor grayColor].CGColor];
+                    [cell.imageView.layer insertSublayer:gradient atIndex:0];
+                }
             }
         }
     }
