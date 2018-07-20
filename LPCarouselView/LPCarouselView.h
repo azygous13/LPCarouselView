@@ -34,6 +34,7 @@ typedef NSArray *(^TitlesDataSourceBlock)();
 @property (nonatomic, strong) UIFont  *titleLabelTextFont;
 @property (nonatomic, strong) UIColor *titleLabelBackgroundColor;
 @property (nonatomic, assign) CGFloat titleLabelHeight;
+@property (nonatomic, assign) CGFloat titleMarginLeft;
 @property (nonatomic, strong) UIColor *pageControlCurrentPageColor;
 @property (nonatomic, strong) UIColor *pageControlNormalPageColor;
 @property (nonatomic, assign) BOOL turnOffInfiniteLoop;//default is NO
