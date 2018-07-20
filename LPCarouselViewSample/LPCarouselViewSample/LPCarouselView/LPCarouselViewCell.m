@@ -16,6 +16,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        _titleMarginLeft = 0;
         [self setupImageView];
         [self setupTitleLabel];
     }
@@ -75,7 +76,7 @@
     CGFloat titleLabelH = self.titleLabelHeight;
     CGFloat titleLabelX = 0;
     CGFloat titleLabelY = self.frame.size.height - titleLabelH;
-    _titleLabel.frame   = CGRectMake(titleLabelX, titleLabelY, titleLabelW, titleLabelH);
+    _titleLabel.frame   = CGRectMake(titleLabelX + _titleMarginLeft, titleLabelY, titleLabelW, titleLabelH);
     _titleLabel.hidden  = !_titleLabel.text;
 }
 
