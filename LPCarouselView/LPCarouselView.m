@@ -131,7 +131,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
 - (void)nextpage
 {
     if (self.images.count > 0) {
-        if ((self.images.count == 1 && self.turnOffSingleImageLoop)) || self.turnOffImagesLoop) {
+        if ((self.images.count == 1 && self.turnOffSingleImageLoop) || self.turnOffImagesLoop) {
             return;
         }
         NSIndexPath *currentIndexPath      = [[self.collectionView indexPathsForVisibleItems] lastObject];
