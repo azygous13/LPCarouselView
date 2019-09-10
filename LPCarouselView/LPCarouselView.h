@@ -39,7 +39,7 @@ typedef NSArray *(^TitlesDataSourceBlock)();
 @property (nonatomic, strong) UIColor *pageControlNormalPageColor;
 @property (nonatomic, assign) BOOL turnOffInfiniteLoop;//default is NO
 @property (nonatomic, assign) BOOL turnOffSingleImageLoop;//default is NO
-@property (nonatomic, assign) BOOL turnOffImageLoop;//default is NO
+@property (nonatomic, assign) BOOL turnOffImagesLoop;//default is NO
 @property (nonatomic, assign) BOOL turnOnBackdrop;//default is OFF
 
 + (instancetype)carouselViewWithFrame:(CGRect)frame
