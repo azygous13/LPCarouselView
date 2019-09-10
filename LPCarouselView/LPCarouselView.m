@@ -56,9 +56,6 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
     carouselView.didSelectCarouselItemBlock = selectedBlock ? selectedBlock : nil;
     carouselView.placeholderImageView = [[UIImageView alloc] init];
     carouselView.placeholderImage = placeholderImage ? : nil;
-    if (images().count > 0) {
-        [carouselView.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:kMaxSections / 2] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
-    }
     return carouselView;
 }
 
@@ -134,7 +131,7 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
 - (void)nextpage
 {
     if (self.images.count > 0) {
-        if (self.images.count == 1 && self.turnOffSingleImageLoop) {
+        if ((self.images.count == 1 && self.turnOffSingleImageLoop)) || self.turnOffImagesLoop) {
             return;
         }
         NSIndexPath *currentIndexPath      = [[self.collectionView indexPathsForVisibleItems] lastObject];
