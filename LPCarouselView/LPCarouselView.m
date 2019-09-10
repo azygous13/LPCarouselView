@@ -176,6 +176,8 @@ static NSString *const kLPCarouselCollectionViewCellID = @"kLPCarouselCollection
 {
     if (self.images.count == 1 && self.turnOffSingleImageLoop) {
         return 1;
+    } else if (self.turnOffImagesLoop) {
+        return 1;
     } else {
         return kMaxSections;
     }

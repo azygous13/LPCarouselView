@@ -35,7 +35,8 @@
     cv.pageControlCurrentPageColor = [UIColor redColor];
     cv.pageControlNormalPageColor  = [UIColor grayColor];
     cv.turnOffInfiniteLoop         = YES;
-    cv.scrollDuration              = 2.f;
+    cv.turnOffImagesLoop = YES;
+//    cv.scrollDuration              = 2.f;
     [self.view addSubview:cv];
     
 //    load local images
